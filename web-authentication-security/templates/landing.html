@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block body_class %}landing-page{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content fade-in">
+
+        <span class="small-badge">
+            🔥 Cybersecurity Portfolio
+        </span>
+
+        <h1>
+            Secure The Digital World
+        </h1>
+
+        <p>
+            Advanced Authentication Platform with
+            URL Scanner, File Analyzer, Admin Dashboard,
+            Live Monitoring & Security Testing Tools.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/login" class="hero-btn primary-btn">
+                Login
+            </a>
+
+            <a href="/register" class="hero-btn secondary-btn">
+                Get Started
+            </a>
+
+        </div>
+
+        <div class="live-stats">
+
+    <div class="live-card">
+        <h2 id="attacks">0</h2>
+        <span>Blocked Attacks</span>
+    </div>
+
+    <div class="live-card">
+        <h2 id="usersLive">0</h2>
+        <span>Protected Users</span>
+    </div>
+
+    <div class="live-card">
+        <h2 id="threats">0</h2>
+        <span>Threat Detection</span>
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+{% endblock %}

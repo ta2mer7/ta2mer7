@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="center-page">
+
+<div class="container fade-in">
+
+<h2>{{t.register}}</h2>
+
+<form method="POST">
+
+<input type="text"
+name="username"
+placeholder="{{t.username}}"
+required>
+
+<input type="password"
+name="password"
+placeholder="{{t.password}}"
+required>
+
+<input type="text"
+name="admin_code"
+placeholder="{{t.admin_code}}">
+
+<button type="submit">
+{{t.register}}
+</button>
+
+</form>
+
+<a href="/login" class="register-link">
+{{t.login}}
+</a>
+
+</div>
+
+</div>
+
+{% endblock %}

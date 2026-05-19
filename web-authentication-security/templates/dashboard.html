@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="dashboard fade-in">
+
+<h2>{{t.dashboard}}</h2>
+
+<div class="stats">
+
+<div class="card">
+    <h3>Users</h3>
+    <p id="users">0</p>
+</div>
+
+<div class="card">
+    <h3>Success Logins</h3>
+    <p id="success">0</p>
+</div>
+
+<div class="card">
+    <h3>Failed Logins</h3>
+    <p id="failed">0</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+// 🔥 LIVE DATA
+function loadStats(){
+    fetch('/api/stats')
+    .then(res => res.json())
+    .then(data => {
+
+        document.getElementById("users").innerText = data.users;
+        document.getElementById("success").innerText = data.success;
+        document.getElementById("failed").innerText = data.failed;
+
+        // 🚨 ALERT
+        if(data.failed > 5){
+            showAlert("⚠️ Possible attack detected!");
+        }
+
+    });
+}
+
+setInterval(loadStats, 3000);
+loadStats();
+</script>
+
+{% endblock %}
